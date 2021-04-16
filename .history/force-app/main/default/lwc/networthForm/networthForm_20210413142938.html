@@ -1,0 +1,21 @@
+<template>
+    <lightning-record-edit-form object-api-name="Assets_And_Liabilities__c" onsuccess={handleSucess}>
+        <lightning-layout multiple-rows="true" class="slds-m-bottom_medium">
+            <lightning-layout-item padding="around-small" size="4">
+                <lightning-input-field field-name="Type__c"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="4">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="4">
+                <lightning-input-field field-name="Balance__c"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="4"></lightning-layout-item>
+            <lightning-layout-item size="4" class="slds-text-align_center">
+                <lightning-button disabled={showLoader} label="Save" variant="brand" onclick={handleSubmit}></lightning-button>
+                <lightning-button disabled={showLoader} class="slds-m-left_medium" label="Reset" onclick={handleReset}></lightning-button>
+            </lightning-layout-item>            
+            <lightning-layout-item size="4"></lightning-layout-item>
+        </lightning-layout>
+    </lightning-record-edit-form>
+</template>

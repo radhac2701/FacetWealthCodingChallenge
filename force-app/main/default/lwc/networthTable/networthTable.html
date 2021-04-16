@@ -1,0 +1,38 @@
+<template>
+    <article class="slds-card">
+        <lightning-datatable key-field="id"
+                             data={data}
+                             columns={columns}                              
+                             hide-checkbox-column
+                             onrowaction={handleRowAction}>
+        </lightning-datatable>
+        <div>
+            <table style="width: unset;">
+                <tr>
+                    <td style="width: 125px;">Total Assets</td>
+                    <td style="width: 30px;">:</td>
+                    <td style="width: 50px;text-align: right;">
+                        <lightning-formatted-number value={totalAssets} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 125px;">Total Liabilities</td>
+                    <td style="width: 30px;">:</td>
+                    <td style="width: 50px;text-align: right;">
+                        <lightning-formatted-number value={totalLiabilities} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 125px;">Total Networth</td>
+                    <td style="width: 30px;">:</td>
+                    <td style="width: 50px;text-align: right;">
+                        <lightning-formatted-number value={totalNetworth} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </article>
+    <div if:true={showLoader}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+</template>
